@@ -1,19 +1,8 @@
 <template>
     <div class="hero-container">
-
-        <!-- Preloader -->
-        <!-- <div class="preloader" :class="{ 'is-hidden': !isLoading }">
-            <img src="/card.svg" alt="Loading" class="loader-icon" />
-        </div> -->
-
         <!-- ── LAYER 0: Dark page behind (revealed by wave) ── -->
         <div class="below-panel">
             <div class="below-content">
-                <!-- <h2>WORKS</h2>
-                <p>Selected Projects</p> -->
-                <!-- <router-link to="/about" class="about-link">Explore →</router-link> -->
-
-
                 <!-- ── LAYER 1: Hero (single panel with animated wave clip-path) ── -->
                 <div class="hero-panel" ref="heroPanel">
 
@@ -28,7 +17,7 @@
 
                     <div class="content-overlay" ref="overlayEl">
                         <p class="tagline">CRAFTING DIGITAL EXPERIENCES THROUGH DESIGN AND TECHNOLOGY.</p>
-                        <div class="scroll-indicator">
+                        <div class="scroll-indicator position-fixd">
                             <p>SCROLL</p>
                             <div class="scroll-line">
                                 <div class="scroll-dot"></div>
@@ -83,7 +72,7 @@ const runWave = () => {
         opacity: 0, duration: 0.3, ease: 'power2.out'
     }, 0);
 
-    
+
     TOP_XS.forEach((_, i) => {
         const key = 'y' + i;
         const rightIndex = 8 - i;         // flip: rightmost (i=8) starts first
