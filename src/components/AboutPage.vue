@@ -1,42 +1,12 @@
-<!-- <template>
-    <section class="min-h-screen bg-black flex items-center justify-center">
-        <div class="text-center">
-            <h2 class="about-title text-6xl font-bold text-white">
-                About Us
-            </h2>
-
-            <p class="text-gray-400 mt-6 max-w-xl">
-                We create powerful digital experiences.
-            </p>
-        </div>
-    </section>
-</template>
-<script setup>
-import { onMounted } from "vue";
-import gsap from "gsap";
-
-onMounted(() => {
-    gsap.from(".about-title", {
-        y: 100,
-        opacity: 0,
-        duration: 1,
-        scrollTrigger: {
-            trigger: ".about-title",
-            end: "top 80%",
-        },
-    });
-});
-min-h-screen bg-black flex items-center justify-center
-</script> -->
 
 <template>
     <section class="about-title relative h-screen w-full overflow-hidden bg-black text-white">
         <div class="text-center">
-            <h2 class=" text-4xl font-bold text-white">
+            <h2 class="text-4xl font-bold text-white">
                 About Us
             </h2>
 
-            <p class="text-gray-400 mt-6 ">
+            <p class="text-gray-400 mt-6">
                 We create powerful digital experiences.
             </p>
         </div>
@@ -148,16 +118,20 @@ min-h-screen bg-black flex items-center justify-center
             </div>
         </div>
 
-
-
     </section>
 </template>
 
 <script setup>
 import { onMounted } from "vue";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
+    // Reset body overflow settings when loading
+    document.body.style.overflow = "auto";
+
     gsap.from(".about-title", {
         y: 100,
         opacity: 0,
@@ -169,3 +143,4 @@ onMounted(() => {
     });
 });
 </script>
+
